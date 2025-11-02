@@ -1,0 +1,115 @@
+// ============================================
+// BASE - TYPOGRAPHY
+// ============================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// === HEADINGS ===
+h1, h2, h3, h4, h5, h6 {
+    font-weight: map-get($font-weights, extrabold);
+    color: $color-primary;
+    line-height: $line-height-tight;
+    margin-bottom: map-get($spacing, md);
+}
+
+h1 {
+    font-size: map-get($font-sizes, 5xl);
+    letter-spacing: $letter-spacing-tight;
+    
+    @include respond-to(md) {
+        font-size: map-get($font-sizes, 3xl);
+    }
+    
+    @include respond-to(sm) {
+        font-size: map-get($font-sizes, 2xl);
+    }
+}
+
+h2 {
+    font-size: map-get($font-sizes, 4xl);
+    letter-spacing: $letter-spacing-tight;
+    
+    @include respond-to(md) {
+        font-size: map-get($font-sizes, 3xl);
+    }
+    
+    @include respond-to(sm) {
+        font-size: map-get($font-sizes, 2xl);
+    }
+}
+
+h3 {
+    font-size: map-get($font-sizes, 3xl);
+    font-weight: map-get($font-weights, bold);
+    
+    @include respond-to(md) {
+        font-size: map-get($font-sizes, 2xl);
+    }
+}
+
+h4 {
+    font-size: map-get($font-sizes, 2xl);
+    font-weight: map-get($font-weights, bold);
+}
+
+h5 {
+    font-size: map-get($font-sizes, xl);
+    font-weight: map-get($font-weights, semibold);
+}
+
+h6 {
+    font-size: map-get($font-sizes, lg);
+    font-weight: map-get($font-weights, semibold);
+}
+
+// === PARAGRAPHS ===
+p {
+    margin-bottom: map-get($spacing, md);
+    line-height: $line-height-normal;
+    color: $color-text-light;
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// === LINKS ===
+a {
+    color: $color-secondary;
+    text-decoration: none;
+    @include transition(color);
+    
+    &:hover {
+        color: $color-accent;
+    }
+}
+
+// === LISTS ===
+ul, ol {
+    margin-bottom: map-get($spacing, md);
+    padding-left: map-get($spacing, lg);
+    
+    li {
+        margin-bottom: map-get($spacing, xs);
+        line-height: $line-height-normal;
+    }
+}
+
+// === STRONG & EMPHASIS ===
+strong, b {
+    font-weight: map-get($font-weights, bold);
+}
+
+em, i {
+    font-style: italic;
+}
+
+// === CODE ===
+code {
+    font-family: 'Courier New', monospace;
+    background: rgba($color-secondary, 0.1);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
