@@ -1,0 +1,15 @@
+// ============================================
+// PAGES - MENU
+// ============================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.menu-items {
+    padding: map-get($spacing, 4xl) 0;
+    background: $color-bg-light;
+}
+
+.menu-grid {
+    @include grid-auto(300px, map-get($spacing, xl));
+}

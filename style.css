@@ -1,9 +1,10 @@
-/* Error: Can't find stylesheet to import.
+/* Error: The target selector was not found.
+ * Use "@extend %btn-base !optional" to avoid this error.
  *    ,
- * 23 | @use 'components/forms';
- *    | ^^^^^^^^^^^^^^^^^^^^^^^
+ * 63 |         @extend %btn-base;
+ *    |         ^^^^^^^^^^^^^^^^^
  *    '
- *   main.scss 23:1  root stylesheet */
+ *   components\_forms.scss 63:9  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -13,5 +14,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a    \2577 \a 23 \2502  @use 'components/forms';\d\a    \2502  ^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   main.scss 23:1  root stylesheet";
+  content: 'Error: The target selector was not found.\aUse "@extend %btn-base !optional" to avoid this error.\a    \2577 \a 63 \2502          @extend %btn-base;\d\a    \2502          ^^^^^^^^^^^^^^^^^\a    \2575 \a   components\\_forms.scss 63:9  root stylesheet';
 }

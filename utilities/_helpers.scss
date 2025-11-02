@@ -1,0 +1,111 @@
+// ============================================
+// UTILITIES - HELPERS
+// ============================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// === SPACING UTILITIES ===
+@each $name, $size in $spacing {
+    .m-#{$name} { margin: $size; }
+    .mt-#{$name} { margin-top: $size; }
+    .mb-#{$name} { margin-bottom: $size; }
+    .ml-#{$name} { margin-left: $size; }
+    .mr-#{$name} { margin-right: $size; }
+    .mx-#{$name} {
+        margin-left: $size;
+        margin-right: $size;
+    }
+    .my-#{$name} {
+        margin-top: $size;
+        margin-bottom: $size;
+    }
+    
+    .p-#{$name} { padding: $size; }
+    .pt-#{$name} { padding-top: $size; }
+    .pb-#{$name} { padding-bottom: $size; }
+    .pl-#{$name} { padding-left: $size; }
+    .pr-#{$name} { padding-right: $size; }
+    .px-#{$name} {
+        padding-left: $size;
+        padding-right: $size;
+    }
+    .py-#{$name} {
+        padding-top: $size;
+        padding-bottom: $size;
+    }
+}
+
+// === TEXT UTILITIES ===
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+.text-primary { color: $color-primary; }
+.text-secondary { color: $color-secondary; }
+.text-accent { color: $color-accent; }
+.text-white { color: $color-text-white; }
+.text-dark { color: $color-text-dark; }
+.text-light { color: $color-text-light; }
+
+@each $name, $weight in $font-weights {
+    .font-#{$name} {
+        font-weight: $weight;
+    }
+}
+
+@each $name, $size in $font-sizes {
+    .text-#{$name} {
+        font-size: $size;
+    }
+}
+
+// === DISPLAY UTILITIES ===
+.d-none { display: none; }
+.d-block { display: block; }
+.d-inline { display: inline; }
+.d-inline-block { display: inline-block; }
+.d-flex { display: flex; }
+.d-grid { display: grid; }
+
+// === FLEX UTILITIES ===
+.flex-center { @include flex-center; }
+.flex-between { @include flex-between; }
+.flex-column { @include flex-column; }
+.flex-wrap { flex-wrap: wrap; }
+
+// === BACKGROUND UTILITIES ===
+.bg-primary { background: $color-primary; }
+.bg-secondary { background: $color-secondary; }
+.bg-light { background: $color-bg-light; }
+.bg-white { background: $color-bg-white; }
+
+// === BORDER RADIUS UTILITIES ===
+@each $name, $radius in $border-radius {
+    .rounded-#{$name} {
+        border-radius: $radius;
+    }
+}
+
+// === SHADOW UTILITIES ===
+.shadow-soft { box-shadow: $shadow-soft; }
+.shadow-medium { box-shadow: $shadow-medium; }
+.shadow-hard { box-shadow: $shadow-hard; }
+
+// === POSITION UTILITIES ===
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+.sticky { position: sticky; }
+
+// === WIDTH UTILITIES ===
+.w-100 { width: 100%; }
+.w-auto { width: auto; }
+.h-100 { height: 100%; }
+.h-auto { height: auto; }
+
+// === OVERFLOW UTILITIES ===
+.overflow-hidden { overflow: hidden; }
+.overflow-auto { overflow: auto; }
+.overflow-scroll { overflow: scroll; }

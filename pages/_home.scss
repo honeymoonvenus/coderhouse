@@ -1,0 +1,274 @@
+// ============================================
+// PAGES - HOME
+// ============================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// === PAGE HEADER ===
+.page-header {
+    @include gradient-primary;
+    color: $color-text-white;
+    padding: map-get($spacing, 4xl) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+        content: '';
+        @include absolute-cover;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(212,165,116,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+        background-size: cover;
+        opacity: $opacity-overlay-light;
+    }
+    
+    h1 {
+        font-size: map-get($font-sizes, 4xl);
+        margin-bottom: map-get($spacing, xs);
+        font-weight: map-get($font-weights, extrabold);
+        letter-spacing: $letter-spacing-tight;
+        position: relative;
+        z-index: map-get($z-index, default);
+        color: $color-text-white;
+        
+        @include respond-to(md) {
+            font-size: map-get($font-sizes, 3xl);
+        }
+    }
+    
+    p {
+        font-size: map-get($font-sizes, lg);
+        font-weight: map-get($font-weights, light);
+        position: relative;
+        z-index: map-get($z-index, default);
+        color: $color-text-white;
+    }
+}
+
+// === FEATURES SECTION ===
+.features-section {
+    padding: map-get($spacing, 4xl) 0;
+    background: $color-bg-light;
+    position: relative;
+    
+    h2 {
+        text-align: center;
+        font-size: map-get($font-sizes, 4xl);
+        color: $color-primary;
+        margin-bottom: map-get($spacing, 4xl);
+        font-weight: map-get($font-weights, extrabold);
+        letter-spacing: $letter-spacing-tight;
+    }
+}
+
+.features-grid {
+    @include grid-auto(280px, map-get($spacing, xl));
+}
+
+// === WHY CHOOSE US ===
+.why-choose-us {
+    padding: map-get($spacing, 4xl) 0;
+    background: $color-bg-white;
+    position: relative;
+    overflow: hidden;
+}
+
+.why-parallax-layer {
+    position: absolute;
+    top: 0;
+    right: -10%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba($color-secondary, 0.05) 0%, transparent 100%);
+    transform: skewX(-10deg);
+    pointer-events: none;
+}
+
+.why-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: map-get($spacing, 4xl);
+    align-items: center;
+    position: relative;
+    z-index: map-get($z-index, default);
+    
+    @include respond-to(md) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.why-text {
+    @include gradient-primary;
+    color: $color-text-white;
+    padding: map-get($spacing, 4xl);
+    border-radius: map-get($border-radius, xl);
+    @include card-shadow(true);
+    
+    @include respond-to(md) {
+        padding: map-get($spacing, xl);
+    }
+    
+    @include respond-to(sm) {
+        padding: map-get($spacing, lg);
+    }
+    
+    h2 {
+        font-size: map-get($font-sizes, 3xl);
+        margin-bottom: map-get($spacing, md);
+        font-weight: map-get($font-weights, extrabold);
+        letter-spacing: $letter-spacing-tight;
+        color: $color-text-white;
+        
+        @include respond-to(sm) {
+            font-size: map-get($font-sizes, 2xl);
+        }
+    }
+    
+    p {
+        margin-bottom: map-get($spacing, lg);
+        line-height: $line-height-relaxed;
+        color: rgba($color-text-white, 0.9);
+        font-size: map-get($font-sizes, md);
+    }
+}
+
+.benefits-list {
+    list-style: none;
+    margin-bottom: map-get($spacing, xl);
+    padding-left: 0;
+    
+    li {
+        padding: map-get($spacing, sm) 0;
+        position: relative;
+        padding-left: map-get($spacing, lg);
+        color: rgba($color-text-white, 0.9);
+        font-size: map-get($font-sizes, md);
+        @include transition(padding-left, color);
+        
+        &:before {
+            content: "✓";
+            color: $color-secondary;
+            font-weight: map-get($font-weights, bold);
+            position: absolute;
+            left: 0;
+            font-size: map-get($font-sizes, lg);
+        }
+        
+        &:hover {
+            padding-left: map-get($spacing, xl);
+            color: $color-text-white;
+        }
+    }
+}
+
+.why-image {
+    @include flex-center;
+}
+
+.main-coffee-image {
+    width: 100%;
+    max-width: 450px;
+    height: 450px;
+    border-radius: map-get($border-radius, 2xl);
+    object-fit: cover;
+    @include card-shadow(true);
+    @include transition(transform);
+    
+    &:hover {
+        transform: scale(1.03);
+    }
+    
+    @include respond-to(md) {
+        max-width: 350px;
+        height: 350px;
+    }
+}
+
+// === OPENING HOURS ===
+.opening-hours {
+    background: linear-gradient(135deg, rgba($color-secondary, 0.1), rgba($color-secondary, 0.05));
+    padding: map-get($spacing, 2xl);
+    border-radius: map-get($border-radius, xl);
+    text-align: center;
+    margin-top: map-get($spacing, 2xl);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba($color-secondary, 0.2);
+}
+
+.hours-content {
+    h3 {
+        font-size: map-get($font-sizes, 2xl);
+        color: $color-primary;
+        margin-bottom: map-get($spacing, md);
+        font-weight: map-get($font-weights, bold);
+    }
+}
+
+.hours-time {
+    font-size: map-get($font-sizes, 3xl);
+    font-weight: map-get($font-weights, extrabold);
+    color: $color-secondary;
+    display: block;
+    margin-bottom: map-get($spacing, xs);
+    letter-spacing: $letter-spacing-tight;
+}
+
+.hours-info {
+    p {
+        color: $color-text-light;
+        font-size: map-get($font-sizes, lg);
+        margin-bottom: map-get($spacing, lg);
+    }
+}
+
+// === PROCESS SECTION ===
+.process {
+    padding: map-get($spacing, 4xl) 0;
+    background: $color-bg-light;
+    
+    h2 {
+        text-align: center;
+        margin-bottom: map-get($spacing, 4xl);
+        color: $color-primary;
+        font-size: map-get($font-sizes, 4xl);
+        font-weight: map-get($font-weights, extrabold);
+        letter-spacing: $letter-spacing-tight;
+    }
+}
+
+.process-steps {
+    @include grid-auto(300px, map-get($spacing, xl));
+}
+
+.step {
+    text-align: center;
+    padding: map-get($spacing, 2xl) map-get($spacing, lg);
+    background: $color-bg-white;
+    color: $color-primary;
+    border-radius: map-get($border-radius, xl);
+    @include transition(transform, box-shadow, border-color);
+    @include card-shadow;
+    border: 1px solid rgba($color-secondary, 0.1);
+    
+    &:hover {
+        transform: translateY(-10px);
+        @include card-shadow(true);
+        border-color: $color-secondary;
+    }
+    
+    .step-icon {
+        font-size: map-get($font-sizes, 5xl);
+        margin-bottom: map-get($spacing, md);
+        @include transition(transform);
+    }
+    
+    &:hover .step-icon {
+        transform: scale(1.1);
+    }
+    
+    h4 {
+        font-size: map-get($font-sizes, xl);
+        font-weight: map-get($font-weights, bold);
+        color: $color-primary;
+    }
+}

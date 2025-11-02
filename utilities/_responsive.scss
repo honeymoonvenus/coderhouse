@@ -1,0 +1,32 @@
+// ============================================
+// UTILITIES - RESPONSIVE
+// ============================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// === RESPONSIVE UTILITIES ===
+// Las media queries ya están en cada componente usando el mixin respond-to
+// Este archivo es para utilidades responsive adicionales
+
+// === DISPLAY RESPONSIVE ===
+@include respond-to(md) {
+    .hide-md { display: none !important; }
+    .show-md { display: block !important; }
+}
+
+@include respond-to(sm) {
+    .hide-sm { display: none !important; }
+    .show-sm { display: block !important; }
+}
+
+// === TEXT ALIGNMENT RESPONSIVE ===
+@include respond-to(md) {
+    .text-md-center { text-align: center !important; }
+    .text-md-left { text-align: left !important; }
+}
+
+@include respond-to(sm) {
+    .text-sm-center { text-align: center !important; }
+    .text-sm-left { text-align: left !important; }
+}

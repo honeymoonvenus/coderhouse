@@ -1,0 +1,79 @@
+// ============================================
+// PAGES - STORY
+// ============================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.story-content {
+    padding: map-get($spacing, 4xl) 0;
+    background: $color-bg-white;
+}
+
+.story-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: map-get($spacing, 4xl);
+    margin-bottom: map-get($spacing, 4xl);
+    align-items: center;
+    
+    @include respond-to(md) {
+        grid-template-columns: 1fr;
+    }
+    
+    &.reverse {
+        direction: rtl;
+        
+        > * {
+            direction: ltr;
+        }
+        
+        @include respond-to(md) {
+            direction: ltr;
+        }
+    }
+}
+
+.story-text {
+    h2 {
+        color: $color-primary;
+        margin-bottom: map-get($spacing, md);
+        font-size: map-get($font-sizes, 3xl);
+        font-weight: map-get($font-weights, extrabold);
+    }
+    
+    p {
+        line-height: $line-height-relaxed;
+        font-size: map-get($font-sizes, md);
+        color: $color-text-light;
+    }
+}
+
+.story-image {
+    font-size: 6rem;
+    text-align: center;
+    filter: grayscale(20%);
+}
+
+// === VALUES ===
+.values {
+    margin-top: map-get($spacing, 4xl);
+    text-align: center;
+    
+    h2 {
+        color: $color-primary;
+        margin-bottom: map-get($spacing, 2xl);
+        font-size: map-get($font-sizes, 3xl);
+        font-weight: map-get($font-weights, extrabold);
+    }
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: map-get($spacing, xl);
+    
+    @include respond-to(md) {
+        grid-template-columns: 1fr;
+    }
+}

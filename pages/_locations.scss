@@ -1,0 +1,190 @@
+// ============================================
+// PAGES - LOCATIONS
+// ============================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// === LOCATION INFO ===
+.location-info {
+    padding: map-get($spacing, 4xl) 0;
+    background: $color-bg-white;
+}
+
+.location-details {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+// === MAP SECTION ===
+.map-section {
+    padding: map-get($spacing, 4xl) 0;
+    background: $color-bg-light;
+    
+    h2 {
+        text-align: center;
+        color: $color-primary;
+        margin-bottom: map-get($spacing, 2xl);
+        font-size: map-get($font-sizes, 3xl);
+        font-weight: map-get($font-weights, extrabold);
+    }
+}
+
+.map-container {
+    border-radius: map-get($border-radius, lg);
+    overflow: hidden;
+    @include card-shadow(true);
+}
+
+// === DIRECTIONS ===
+.directions {
+    padding: map-get($spacing, 4xl) 0;
+    background: $color-bg-white;
+    
+    h2 {
+        text-align: center;
+        color: $color-primary;
+        margin-bottom: map-get($spacing, 2xl);
+        font-size: map-get($font-sizes, 3xl);
+        font-weight: map-get($font-weights, extrabold);
+    }
+}
+
+.directions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: map-get($spacing, xl);
+    
+    @include respond-to(md) {
+        grid-template-columns: 1fr;
+    }
+}
+
+// === POINTS OF SALE ===
+.locations-grid {
+    padding: map-get($spacing, 4xl) 0;
+    background: $color-bg-white;
+}
+
+.locations {
+    @include grid-auto(350px, map-get($spacing, xl));
+    
+    @include respond-to(md) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.location-image {
+    font-size: map-get($font-sizes, 4xl);
+    margin-bottom: map-get($spacing, md);
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: map-get($spacing, sm);
+    margin-top: map-get($spacing, md);
+}
+
+.feature {
+    background: rgba($color-secondary, 0.2);
+    padding: map-get($spacing, xs) map-get($spacing, sm);
+    border-radius: map-get($border-radius, lg);
+    font-size: map-get($font-sizes, sm);
+    @include transition(background, color, transform);
+    
+    &:hover {
+        background: $color-secondary;
+        color: $color-text-white;
+        transform: translateY(-2px);
+    }
+}
+
+// === DELIVERY SECTION ===
+.delivery-section,
+.franchise-section {
+    padding: map-get($spacing, 4xl) 0;
+    background: $color-bg-light;
+    
+    h2 {
+        text-align: center;
+        color: $color-primary;
+        margin-bottom: map-get($spacing, 2xl);
+        font-size: map-get($font-sizes, 3xl);
+        font-weight: map-get($font-weights, extrabold);
+    }
+}
+
+.delivery-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: map-get($spacing, xl);
+    
+    @include respond-to(md) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.delivery-apps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: map-get($spacing, sm);
+    margin-top: map-get($spacing, md);
+}
+
+.app {
+    background: $color-secondary;
+    color: $color-text-white;
+    padding: map-get($spacing, xs) map-get($spacing, md);
+    border-radius: map-get($border-radius, lg);
+    font-size: map-get($font-sizes, sm);
+    font-weight: map-get($font-weights, semibold);
+}
+
+// === FRANCHISE ===
+.franchise-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: map-get($spacing, 2xl);
+    align-items: center;
+    background: $color-bg-white;
+    padding: map-get($spacing, 4xl);
+    border-radius: map-get($border-radius, lg);
+    @include card-shadow;
+    
+    @include respond-to(md) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.franchise-text {
+    p {
+        color: $color-text-light;
+        line-height: $line-height-relaxed;
+        margin-bottom: map-get($spacing, lg);
+        font-size: map-get($font-sizes, md);
+    }
+}
+
+.franchise-benefits {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: map-get($spacing, md);
+    margin: map-get($spacing, lg) 0;
+    
+    @include respond-to(md) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.benefit {
+    color: $color-primary;
+    font-weight: map-get($font-weights, semibold);
+    font-size: map-get($font-sizes, base);
+}
+
+.franchise-image {
+    font-size: 8rem;
+    text-align: center;
+    filter: grayscale(20%);
+}

@@ -1,0 +1,109 @@
+// ============================================
+// COMPONENTS - FORMS
+// ============================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// === NEWSLETTER FORM ===
+.newsletter {
+    padding: map-get($spacing, 4xl) 0;
+    @include gradient-primary;
+    color: $color-text-white;
+    text-align: center;
+    
+    h2 {
+        margin-bottom: map-get($spacing, sm);
+        font-size: map-get($font-sizes, 3xl);
+        font-weight: map-get($font-weights, extrabold);
+        color: $color-text-white;
+    }
+    
+    p {
+        font-size: map-get($font-sizes, md);
+        margin-bottom: map-get($spacing, lg);
+        opacity: $opacity-overlay-dark;
+        color: $color-text-white;
+    }
+}
+
+.newsletter-form {
+    @include flex-center;
+    gap: map-get($spacing, sm);
+    margin-top: map-get($spacing, xl);
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    input {
+        padding: map-get($spacing, sm) map-get($spacing, md);
+        border: none;
+        border-radius: map-get($border-radius, full);
+        flex: 1;
+        min-width: 250px;
+        background: rgba($color-text-white, 0.15);
+        color: $color-text-white;
+        backdrop-filter: blur(10px);
+        @include transition(background, box-shadow);
+        font-size: map-get($font-sizes, base);
+        
+        &:focus {
+            outline: none;
+            background: rgba($color-text-white, 0.25);
+            box-shadow: 0 0 0 3px rgba($color-secondary, 0.3);
+        }
+        
+        &::placeholder {
+            color: rgba($color-text-white, 0.7);
+        }
+    }
+    
+    button {
+        @extend %btn-base;
+        padding: map-get($spacing, sm) map-get($spacing, 2xl);
+    }
+    
+    @include respond-to(md) {
+        flex-direction: column;
+        align-items: stretch;
+        
+        input {
+            width: 100%;
+        }
+    }
+}
+
+// === FORM INPUTS GENERALES ===
+input,
+textarea,
+select {
+    font-family: $font-primary;
+    font-size: map-get($font-sizes, base);
+    padding: map-get($spacing, sm) map-get($spacing, md);
+    border: 2px solid rgba($color-secondary, 0.2);
+    border-radius: map-get($border-radius, sm);
+    @include transition(border-color, box-shadow);
+    
+    &:focus {
+        @include focus-outline;
+        border-color: $color-secondary;
+    }
+    
+    &::placeholder {
+        color: rgba($color-text-dark, 0.5);
+    }
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+// === LABELS ===
+label {
+    display: block;
+    margin-bottom: map-get($spacing, xs);
+    font-weight: map-get($font-weights, medium);
+    color: $color-text-dark;
+}
