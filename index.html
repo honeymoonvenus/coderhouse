@@ -3,60 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Café Para El Alma - Medellín</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Café Para El Alma - El Mejor Café de Medellín | Café Artesanal Colombiano</title>
+    <meta name="description" content="Café Para El Alma ofrece el mejor café artesanal de Medellín. Granos 100% colombianos, tostado artesanal y baristas certificados. Visítanos en El Poblado.">
+    <meta name="keywords" content="café medellín, café artesanal, café colombiano, cafetería el poblado, mejor café medellín, café para el alma, espresso, latte, cold brew">
+    <meta name="author" content="Café Para El Alma">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cafeparaelalma.com/">
+    <meta property="og:title" content="Café Para El Alma - El Mejor Café de Medellín">
+    <meta property="og:description" content="Disfruta del mejor café artesanal colombiano en el corazón de Medellín. Granos 100% colombianos y tostado artesanal.">
+    <meta property="og:image" content="https://cafeparaelalma.com/IMG/portada.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://cafeparaelalma.com/">
+    <meta property="twitter:title" content="Café Para El Alma - El Mejor Café de Medellín">
+    <meta property="twitter:description" content="Disfruta del mejor café artesanal colombiano en el corazón de Medellín">
+    <meta property="twitter:image" content="https://cafeparaelalma.com/IMG/portada.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://cafeparaelalma.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CafeOrCoffeeShop",
+      "name": "Café Para El Alma",
+      "image": "https://cafeparaelalma.com/IMG/portada.png",
+      "url": "https://cafeparaelalma.com",
+      "telephone": "+5744445555",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle 10 #43-50",
+        "addressLocality": "El Poblado, Medellín",
+        "addressRegion": "Antioquia",
+        "postalCode": "050021",
+        "addressCountry": "CO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 6.2092,
+        "longitude": -75.5689
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "07:00",
+          "closes": "21:00"
+        }
+      ],
+      "servesCuisine": "Café colombiano",
+      "menu": "https://cafeparaelalma.com/menu.html"
+    }
+    </script>
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+    
+    <!-- Google Fonts - Inter (similar a Helvetica Neue) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Library for Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <!-- Parallax Background -->
+    <div class="parallax-bg"></div>
+
+    <!-- Header con menú mejorado e iconos SVG -->
+    <header id="header">
         <div class="container">
             <div class="logo">CAFÉ PARA EL ALMA</div>
             <nav>
-                <a href="index.html">Inicio</a>
-                <a href="menu.html">Menú</a>
-                <a href="historia.html">Nuestra Historia</a>
-                <a href="ubicacion.html">Ubicación</a>
-                <a href="puntos-venta.html">Puntos de Venta</a>
+                <a href="index.html" class="active">
+                    <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                    </svg>
+                    Inicio
+                </a>
+                <a href="menu.html">
+                    <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 6v8h3v8h2V2c-2.76 0-5 2.24-5 4zm-5 3H9v11H7v-8c-2.21 0-4-1.79-4-4V5c0-1.1.9-2 2-2h6V1h2v2h2c1.1 0 2 .9 2 2v3c0 2.21-1.79 4-4 4z"/>
+                    </svg>
+                    Menú
+                </a>
+                <a href="historia.html">
+                    <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    Historia
+                </a>
+                <a href="ubicacion.html">
+                    <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    Ubicación
+                </a>
+                <a href="puntos-venta.html">
+                    <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 4H4v2h16V4zm1 10v-2l-1-5H4l-1 5v2h1v6h10v-6h4v6h2v-6h1zm-9 4H6v-4h6v4z"/>
+                    </svg>
+                    Puntos de Venta
+                </a>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="hero">
-            <img class="hero-image" src="IMG/portada.png" alt="Vista principal de Café Para El Alma, mostrando una taza de café artesanal con latte art"> 
+        <!-- Hero con Parallax -->
+        <section class="hero" id="inicio">
+            <div class="hero-parallax" id="heroParallax"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                <h1>El Mejor Café de Medellín</h1>
+                <p>Experimenta el auténtico sabor del café colombiano</p>
+                <a href="menu.html" class="hero-btn">Explorar Menú</a>
+            </div>
         </section>
         
-        <section class="features-section">
+        <!-- Features mejoradas -->
+        <section class="features-section" id="menu">
             <div class="container">
-                <h2>Los más pedidos</h2>
+                <h2 data-aos="fade-up">Los más pedidos</h2>
                 <div class="features-grid">
-                    <div class="feature-card">
+                    <article class="feature-card" data-aos="fade-up" data-aos-delay="100">
                         <img src="IMG/espresso.jpg" alt="Taza de espresso recién preparado con crema dorada" class="feature-image">
                         <h3>Espresso</h3>
                         <p>Café concentrado y aromático preparado con granos de alta calidad, perfecto para despertar tus sentidos.</p>
-                    </div>
-                    <div class="feature-card">
+                    </article>
+                    <article class="feature-card" data-aos="fade-up" data-aos-delay="200">
                         <img src="IMG/latte.jpg" alt="Latte cremoso con espuma de leche perfectamente vaporizada" class="feature-image">
                         <h3>Latte</h3>
                         <p>Suave combinación de espresso con leche vaporizada y una delicada capa de espuma cremosa.</p>
-                    </div>
-                    <div class="feature-card">
+                    </article>
+                    <article class="feature-card" data-aos="fade-up" data-aos-delay="300">
                         <img src="IMG/latteart.jpg" alt="Café latte con arte dibujado en la espuma por barista experto" class="feature-image">
                         <h3>Latte Art</h3>
                         <p>Arte en cada taza con diseños únicos creados por nuestros baristas expertos.</p>
-                    </div>
-                    <div class="feature-card">
+                    </article>
+                    <article class="feature-card" data-aos="fade-up" data-aos-delay="400">
                         <img src="IMG/coldbrew.jpg" alt="Vaso de cold brew café frío servido con hielo" class="feature-image">
                         <h3>Cold Brew</h3>
                         <p>Café frío de extracción lenta, suave y refrescante, perfecto para días calurosos.</p>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section class="why-choose-us">
+        <!-- Why Choose Us -->
+        <section class="why-choose-us" id="historia">
+            <div class="why-parallax-layer"></div>
             <div class="container">
                 <div class="why-content">
-                    <div class="why-text">
+                    <div class="why-text" data-aos="fade-right">
                         <h2>¿Por Qué Elegirnos?</h2>
                         <p>En Café Para El Alma, cada taza cuenta una historia de pasión, tradición y excelencia. Nuestros granos son seleccionados cuidadosamente de las mejores fincas cafeteras de Colombia.</p>
                         <ul class="benefits-list">
@@ -65,58 +179,61 @@
                             <li>Baristas certificados</li>
                             <li>Ambiente acogedor</li>
                         </ul>
-                        <button class="learn-more-btn">CONOCE MÁS</button>
+                        <button class="learn-more-btn" onclick="window.location.href='historia.html'">CONOCE MÁS</button>
                     </div>
-                    <div class="why-image">
+                    <div class="why-image" data-aos="fade-left">
                         <img src="IMG/porquelejirnos.jpg" alt="Barista preparando café con técnica de latte art en nuestra cafetería" class="main-coffee-image">
                     </div>
                 </div>
-                <div class="opening-hours">
+                <div class="opening-hours" data-aos="fade-up">
                     <div class="hours-content">
                         <h3>Horarios de Atención</h3>
                         <div class="hours-info">
                             <span class="hours-time">7:00 AM - 9:00 PM</span>
                             <p>Lunes a Viernes</p>
                         </div>
-                        <button class="visit-btn">VEN A VISITARNOS</button>
+                        <button class="visit-btn" onclick="window.location.href='ubicacion.html'">VEN A VISITARNOS</button>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Process -->
         <section class="process">
             <div class="container">
-                <h2>El Mejor Sabor Desde El Proceso</h2>
+                <h2 data-aos="fade-up">El Mejor Sabor Desde El Proceso</h2>
                 <div class="process-steps">
-                    <div class="step">
+                    <article class="step" data-aos="zoom-in" data-aos-delay="100">
                         <div class="step-icon">🌱</div>
                         <h4>Tostado Artesanal</h4>
-                    </div>
-                    <div class="step">
+                    </article>
+                    <article class="step" data-aos="zoom-in" data-aos-delay="200">
                         <div class="step-icon">🤝</div>
                         <h4>Comercio Directo</h4>
-                    </div>
-                    <div class="step">
+                    </article>
+                    <article class="step" data-aos="zoom-in" data-aos-delay="300">
                         <div class="step-icon">🌿</div>
                         <h4>Sabor Orgánico</h4>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
 
+        <!-- Newsletter -->
         <section class="newsletter">
-            <div class="container">
+            <div class="container" data-aos="fade-up">
                 <h2>Recibe Nuevas Actualizaciones Y Ofertas Especiales</h2>
                 <p>Mantente al día y recibe notificaciones de nuevos productos, descuentos y ofertas especiales suscribiéndote a nuestras actualizaciones.</p>
-                <form class="newsletter-form">
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte!');">
                     <label for="email-newsletter" class="visually-hidden">Correo electrónico para recibir ofertas</label>
-                    <input type="email" id="email-newsletter" placeholder="Tu Email..." required aria-label="Ingresa tu correo electrónico">
+                    <input type="email" id="email-newsletter" placeholder="Tu Email..." required aria-label="Ingresa tu correo electrónico" name="email">
                     <button type="submit">SUSCRIBIRSE</button>
                 </form>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -131,15 +248,63 @@
                         <li><a href="menu.html">Menú</a></li>
                         <li><a href="historia.html">Historia</a></li>
                         <li><a href="ubicacion.html">Ubicación</a></li>
+                        <li><a href="puntos-venta.html">Puntos de Venta</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contacto</h4>
                     <p>📍 Calle 10 #43-50, El Poblado<br>Medellín, Colombia</p>
                     <p>📞 <a href="tel:+5744445555" class="phone-link">+57 4 444 5555</a></p>
+                    <p>✉️ <a href="mailto:info@cafeparaelalma.com" class="phone-link">info@cafeparaelalma.com</a></p>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- AOS Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+
+        // Parallax effect for hero
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallax = document.getElementById('heroParallax');
+            
+            if (parallax) {
+                parallax.style.transform = 'translateY(' + scrolled * 0.5 + 'px)';
+            }
+
+            // Header scroll effect
+            const header = document.getElementById('header');
+            if (scrolled > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
