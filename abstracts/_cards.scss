@@ -1,0 +1,191 @@
+// ============================================
+// COMPONENTS - CARDS
+// ============================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// === TARJETA BASE ===
+%card-base {
+    @include card-base;
+}
+
+// === FEATURE CARDS ===
+.feature-card {
+    @extend %card-base;
+    text-align: center;
+    
+    .feature-image {
+        width: 100%;
+        height: 250px;
+        border-radius: map-get($border-radius, md);
+        margin-bottom: map-get($spacing, md);
+        object-fit: cover;
+        @include transition(transform);
+    }
+    
+    &:hover .feature-image {
+        transform: scale(1.05);
+    }
+    
+    h3 {
+        font-size: map-get($font-sizes, xl);
+        color: $color-primary;
+        margin-bottom: map-get($spacing, sm);
+        font-weight: map-get($font-weights, bold);
+    }
+    
+    p {
+        color: $color-text-light;
+        line-height: $line-height-normal;
+        font-size: map-get($font-sizes, base);
+    }
+}
+
+// === MENU ITEMS ===
+.menu-item {
+    @extend %card-base;
+    text-align: center;
+    border: 2px solid transparent;
+    
+    .item-image img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: map-get($border-radius, md);
+        @include transition(transform);
+        margin-bottom: map-get($spacing, md);
+    }
+    
+    &:hover .item-image img {
+        transform: scale(1.05);
+    }
+    
+    h3 {
+        font-size: map-get($font-sizes, xl);
+        color: $color-primary;
+        margin-bottom: map-get($spacing, sm);
+        font-weight: map-get($font-weights, bold);
+    }
+    
+    p {
+        color: $color-text-light;
+        margin-bottom: map-get($spacing, sm);
+        line-height: $line-height-normal;
+    }
+    
+    .price {
+        font-size: map-get($font-sizes, xl);
+        font-weight: map-get($font-weights, extrabold);
+        color: $color-secondary;
+        margin: map-get($spacing, md) 0;
+        display: block;
+    }
+}
+
+// === VALUE ITEMS ===
+.value-item {
+    background: $color-bg-light;
+    padding: map-get($spacing, 2xl) map-get($spacing, lg);
+    border-radius: map-get($border-radius, lg);
+    @include transition(transform, box-shadow, border-color);
+    border: 1px solid rgba($color-secondary, 0.1);
+    
+    &:hover {
+        transform: translateY(-8px);
+        @include card-shadow;
+        border-color: $color-secondary;
+    }
+    
+    h3 {
+        color: $color-secondary;
+        margin-bottom: map-get($spacing, sm);
+        font-size: map-get($font-sizes, xl);
+        font-weight: map-get($font-weights, bold);
+    }
+    
+    p {
+        color: $color-text-light;
+        line-height: $line-height-normal;
+    }
+}
+
+// === DELIVERY CARDS ===
+.delivery-card {
+    @extend %card-base;
+    
+    h3 {
+        color: $color-secondary;
+        margin-bottom: map-get($spacing, md);
+        font-size: map-get($font-sizes, xl);
+        font-weight: map-get($font-weights, bold);
+    }
+    
+    ul {
+        list-style: none;
+        padding-left: 0;
+        
+        li {
+            padding: map-get($spacing, xs) 0;
+            color: $color-text-light;
+        }
+    }
+}
+
+// === LOCATION CARDS ===
+.location-card {
+    background: $color-bg-light;
+    padding: map-get($spacing, 2xl);
+    border-radius: map-get($border-radius, lg);
+    margin-bottom: map-get($spacing, lg);
+    @include card-shadow;
+    
+    h2,
+    h3 {
+        color: $color-primary;
+        margin-bottom: map-get($spacing, md);
+        font-weight: map-get($font-weights, bold);
+    }
+    
+    p {
+        line-height: $line-height-relaxed;
+        color: $color-text-light;
+        margin-bottom: map-get($spacing, sm);
+    }
+    
+    &.main {
+        @include gradient-primary;
+        color: $color-text-white;
+        
+        h3, p {
+            color: $color-text-white;
+        }
+    }
+}
+
+// === DIRECTION ITEMS ===
+.direction-item {
+    background: $color-bg-light;
+    padding: map-get($spacing, 2xl) map-get($spacing, lg);
+    border-radius: map-get($border-radius, lg);
+    @include transition(transform, box-shadow, border-color);
+    border: 1px solid rgba($color-secondary, 0.1);
+    
+    &:hover {
+        transform: translateY(-5px);
+        @include card-shadow;
+        border-color: $color-secondary;
+    }
+    
+    h3 {
+        color: $color-secondary;
+        margin-bottom: map-get($spacing, sm);
+        font-size: map-get($font-sizes, xl);
+        font-weight: map-get($font-weights, bold);
+    }
+    
+    p {
+        color: $color-text-light;
+        line-height: $line-height-relaxed;
+    }
+}
