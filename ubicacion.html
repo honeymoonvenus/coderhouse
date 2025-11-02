@@ -3,35 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ubicación - CAFÉ PARA EL ALMA</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Ubicación - Café Para El Alma | Calle 10 #43-50, El Poblado, Medellín</title>
+    <meta name="description" content="Visítanos en Calle 10 #43-50, El Poblado, Medellín. Horarios: L-V 6AM-9PM. Cerca del Metro Poblado. Mapa, direcciones y contacto.">
+    <meta name="keywords" content="café el poblado, ubicación café medellín, calle 10 el poblado, dirección café para el alma, cómo llegar">
+    <meta name="author" content="Café Para El Alma">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="place">
+    <meta property="og:url" content="https://cafeparaelalma.com/ubicacion.html">
+    <meta property="og:title" content="Ubicación - Café Para El Alma">
+    <meta property="og:description" content="Encuéntranos en el corazón de Medellín">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://cafeparaelalma.com/ubicacion.html">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Café Para El Alma",
+      "image": "https://cafeparaelalma.com/IMG/portada.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle 10 #43-50",
+        "addressLocality": "El Poblado, Medellín",
+        "addressRegion": "Antioquia",
+        "postalCode": "050021",
+        "addressCountry": "CO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 6.2092,
+        "longitude": -75.5689
+      },
+      "url": "https://cafeparaelalma.com",
+      "telephone": "+5744445555",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "06:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "07:00",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "08:00",
+          "closes": "20:00"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <!-- Parallax Background -->
+    <div class="parallax-bg"></div>
+
+    <!-- Header -->
+    <header id="header">
         <div class="container">
             <div class="logo">CAFÉ PARA EL ALMA</div>
             <nav>
-                <a href="index.html">Inicio</a>
-                <a href="menu.html">Menú</a>
-                <a href="historia.html">Nuestra Historia</a>
-                <a href="ubicacion.html" class="active">Ubicación</a>
-                <a href="puntos-venta.html">Puntos de Venta</a>
+                <a href="index.html">
+                    <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                    </svg>
+                    Inicio
+                </a>
+                <a href="menu.html">
+                    <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 6v8h3v8h2V2c-2.76 0-5 2.24-5 4zm-5 3H9v11H7v-8c-2.21 0-4-1.79-4-4V5c0-1.1.9-2 2-2h6V1h2v2h2c1.1 0 2 .9 2 2v3c0 2.21-1.79 4-4 4z"/>
+                    </svg>
+                    Menú
+                </a>
+                <a href="historia.html">
+                    <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    Historia
+                </a>
+                <a href="ubicacion.html" class="active">
+                    <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    Ubicación
+                </a>
+                <a href="puntos-venta.html">
+                    <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 4H4v2h16V4zm1 10v-2l-1-5H4l-1 5v2h1v6h10v-6h4v6h2v-6h1zm-9 4H6v-4h6v4z"/>
+                    </svg>
+                    Puntos de Venta
+                </a>
             </nav>
         </div>
     </header>
 
     <main>
+        <!-- Page Header -->
         <section class="page-header">
             <div class="container">
-                <h1>Nuestra Ubicación</h1>
-                <p>Encuéntranos en el corazón de Medellín</p>
+                <h1 data-aos="fade-up">Nuestra Ubicación</h1>
+                <p data-aos="fade-up" data-aos-delay="100">Encuéntranos en el corazón de Medellín</p>
             </div>
         </section>
 
+        <!-- Location Info -->
         <section class="location-info">
             <div class="container">
                 <div class="location-details">
-                    <article class="location-card">
+                    <article class="location-card" data-aos="fade-up">
                         <h2>📍 Dirección Principal</h2>
                         <p><strong>Calle 10 #43-50, El Poblado</strong><br>
                         Medellín, Antioquia<br>
@@ -39,7 +142,7 @@
                         
                         <h3>📞 Contacto</h3>
                         <p><strong>Teléfono:</strong> <a href="tel:+5744445555" class="phone-link">+57 4 444 5555</a><br>
-                        <strong>WhatsApp:</strong> <a href="https://wa.me/573001234567" class="phone-link">+57 300 123 4567</a><br>
+                        <strong>WhatsApp:</strong> <a href="https://wa.me/573001234567" class="phone-link" target="_blank" rel="noopener">+57 300 123 4567</a><br>
                         <strong>Email:</strong> <a href="mailto:info@cafe-para-el-alma.com" class="phone-link">info@cafe-para-el-alma.com</a></p>
                         
                         <h3>🕐 Horarios</h3>
@@ -56,10 +159,11 @@
             </div>
         </section>
 
+        <!-- Map Section -->
         <section class="map-section">
             <div class="container">
-                <h2>Encuentra nuestro local</h2>
-                <div class="map-container">
+                <h2 data-aos="fade-up">Encuentra nuestro local</h2>
+                <div class="map-container" data-aos="zoom-in">
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2135!2d-75.5689!3d6.2092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428591b92e935%3A0x4a1b7e7e7e7e7e7e!2sEl%20Poblado%2C%20Medell%C3%ADn%2C%20Antioquia%2C%20Colombia!5e0!3m2!1sen!2sco!4v1625097600000!5m2!1sen!2sco"
                         width="100%" 
@@ -74,23 +178,24 @@
             </div>
         </section>
 
+        <!-- Directions -->
         <section class="directions">
             <div class="container">
-                <h2>¿Cómo llegar?</h2>
+                <h2 data-aos="fade-up">¿Cómo llegar?</h2>
                 <div class="directions-grid">
-                    <article class="direction-item">
+                    <article class="direction-item" data-aos="fade-up" data-aos-delay="100">
                         <h3>🚗 En Vehículo</h3>
                         <p>Desde el centro de Medellín, toma la Avenida El Poblado hacia el sur. Nuestro local está a 2 cuadras de la estación del Metro Poblado. Parqueadero disponible.</p>
                     </article>
-                    <article class="direction-item">
+                    <article class="direction-item" data-aos="fade-up" data-aos-delay="200">
                         <h3>🚇 En Metro</h3>
                         <p>Toma la Línea A hasta la estación Poblado. Sal por la salida principal y camina 3 minutos por la Calle 10 hacia el oriente.</p>
                     </article>
-                    <article class="direction-item">
+                    <article class="direction-item" data-aos="fade-up" data-aos-delay="300">
                         <h3>🚌 En Bus</h3>
                         <p>Las rutas 101, 102 y 103 tienen parada cerca de nuestro local. Baja en la parada "Poblado Centro" y camina 1 minuto.</p>
                     </article>
-                    <article class="direction-item">
+                    <article class="direction-item" data-aos="fade-up" data-aos-delay="400">
                         <h3>🚶 A Pie</h3>
                         <p>Si estás en la zona rosa del Poblado, somos fáciles de encontrar. Estamos cerca del Parque El Poblado y los principales centros comerciales.</p>
                     </article>
@@ -99,6 +204,7 @@
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -113,6 +219,7 @@
                         <li><a href="menu.html">Menú</a></li>
                         <li><a href="historia.html">Historia</a></li>
                         <li><a href="ubicacion.html">Ubicación</a></li>
+                        <li><a href="puntos-venta.html">Puntos de Venta</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -123,5 +230,31 @@
             </div>
         </div>
     </footer>
+
+    <!-- AOS Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const header = document.getElementById('header');
+            
+            if (scrolled > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
