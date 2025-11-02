@@ -1,0 +1,43 @@
+// ============================================
+// LAYOUT - HEADER
+// ============================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+header {
+    background: rgba($color-primary, 0.98);
+    backdrop-filter: blur(10px);
+    color: $color-text-white;
+    padding: map-get($spacing, md) 0;
+    position: sticky;
+    top: 0;
+    z-index: map-get($z-index, sticky);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    @include transition(padding, background);
+    
+    &.scrolled {
+        padding: map-get($spacing, sm) 0;
+        background: rgba($color-primary, 1);
+    }
+    
+    .container {
+        @include flex-between;
+        flex-wrap: wrap;
+    }
+}
+
+.logo {
+    font-size: map-get($font-sizes, 2xl);
+    font-weight: map-get($font-weights, extrabold);
+    letter-spacing: 1px;
+    @include transition(color);
+    
+    &:hover {
+        color: $color-secondary;
+    }
+    
+    @include respond-to(sm) {
+        font-size: map-get($font-sizes, xl);
+    }
+}

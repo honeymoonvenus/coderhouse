@@ -1,0 +1,75 @@
+// ============================================
+// LAYOUT - NAVIGATION
+// ============================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+nav {
+    display: flex;
+    gap: map-get($spacing, lg);
+    align-items: center;
+    
+    @include respond-to(md) {
+        gap: map-get($spacing, sm);
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    a {
+        color: $color-text-white;
+        text-decoration: none;
+        font-weight: map-get($font-weights, medium);
+        @include transition(color);
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: map-get($spacing, xs);
+        font-size: map-get($font-sizes, sm);
+        letter-spacing: $letter-spacing-wide;
+        
+        svg {
+            width: 20px;
+            height: 20px;
+            @include transition(transform);
+        }
+        
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: $color-secondary;
+            @include transition(width);
+        }
+        
+        &:hover,
+        &.active {
+            color: $color-secondary;
+            
+            &::after {
+                width: 100%;
+            }
+            
+            svg {
+                transform: translateY(-2px);
+            }
+        }
+        
+        @include respond-to(md) {
+            font-size: map-get($font-sizes, xs);
+            
+            svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
+        
+        @include respond-to(sm) {
+            font-size: map-get($font-sizes, xs);
+            gap: 0.3rem;
+        }
+    }
+}
