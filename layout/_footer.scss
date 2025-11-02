@@ -1,0 +1,64 @@
+// ============================================
+// LAYOUT - FOOTER
+// ============================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+footer {
+    background: $color-primary;
+    color: $color-text-white;
+    padding: map-get($spacing, 4xl) 0 map-get($spacing, lg);
+}
+
+.footer-content {
+    @include grid-auto(250px, map-get($spacing, 2xl));
+    margin-bottom: map-get($spacing, lg);
+}
+
+.footer-section {
+    h3,
+    h4 {
+        margin-bottom: map-get($spacing, md);
+        color: $color-secondary;
+        font-weight: map-get($font-weights, bold);
+    }
+    
+    p {
+        line-height: $line-height-relaxed;
+        opacity: $opacity-overlay-dark;
+        color: $color-text-white;
+    }
+    
+    ul {
+        list-style: none;
+        padding-left: 0;
+        
+        li {
+            margin-bottom: map-get($spacing, sm);
+        }
+    }
+    
+    a {
+        color: $color-text-white;
+        text-decoration: none;
+        @include transition(color, padding-left);
+        opacity: $opacity-overlay-dark;
+        
+        &:hover {
+            color: $color-secondary;
+            padding-left: 5px;
+        }
+    }
+}
+
+.phone-link {
+    color: $color-text-white;
+    text-decoration: none;
+    @include transition(color);
+    font-weight: map-get($font-weights, medium);
+    
+    &:hover {
+        color: $color-secondary;
+    }
+}
