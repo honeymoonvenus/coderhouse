@@ -1,0 +1,264 @@
+// ============================================
+// CAFÉ PARA EL ALMA - MIXINS SASS
+// ============================================
+
+@use 'variables' as *;
+
+// === RESPONSIVE BREAKPOINTS ===
+@mixin respond-to($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (max-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    } @else {
+        @warn "No existe el breakpoint `#{$breakpoint}` en $breakpoints";
+    }
+}
+
+// Uso: @include respond-to(md) { ... }
+
+// === FLEXBOX ===
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+// === GRID ===
+@mixin grid-auto($min-width: 280px, $gap: map-get($spacing, lg)) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+    gap: $gap;
+}
+
+// === POSICIONAMIENTO ===
+@mixin absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin absolute-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+// === TRANSICIONES ===
+@mixin transition($properties...) {
+    transition-property: $properties;
+    transition-duration: $transition-normal;
+    transition-timing-function: $easing-default;
+}
+
+// === GRADIENTES ===
+@mixin gradient-primary {
+    background: linear-gradient(135deg, $color-primary 0%, $color-primary-dark 100%);
+}
+
+@mixin gradient-secondary {
+    background: linear-gradient(135deg, $color-secondary 0%, $color-accent 100%);
+}
+
+// === SOMBRAS ===
+@mixin card-shadow($hover: false) {
+    @if $hover {
+        box-shadow: $shadow-medium;
+    } @else {
+        box-shadow: $shadow-soft;
+    }
+}
+
+// === BOTONES ===
+@mixin button-base {
+    @include gradient-secondary;
+    color: $color-text-white;
+    border: none;
+    padding: map-get($spacing, sm) map-get($spacing, xl);
+    border-radius: map-get($border-radius, full);
+    cursor: pointer;
+    font-weight: map-get($font-weights, semibold);
+    @include transition(transform, box-shadow);
+    box-shadow: $shadow-button;
+    font-size: map-get($font-sizes, base);
+    text-decoration: none;
+    display: inline-block;
+    
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: $shadow-button-hover;
+    }
+    
+    &:active {
+        transform: translateY(-1px);
+    }
+}
+
+// === TARJETAS ===
+@mixin card-base {
+    background: $color-bg-white;
+    padding: map-get($spacing, xl);
+    border-radius: map-get($border-radius, lg);
+    @include card-shadow;
+    @include transition(transform, box-shadow, border-color);
+    border: 1px solid rgba($color-secondary, 0.1);
+    
+    &:hover {
+        transform: translateY(-10px);
+        @include card-shadow(true);
+        border-color: $color-secondary;
+    }
+}
+
+// === TEXTO ===
+@mixin text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin text-gradient {
+    background: linear-gradient(135deg, $color-secondary, $color-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+// === HOVER EFFECTS ===
+@mixin hover-lift($distance: -10px) {
+    @include transition(transform, box-shadow);
+    
+    &:hover {
+        transform: translateY($distance);
+        @include card-shadow(true);
+    }
+}
+
+@mixin hover-scale($scale: 1.05) {
+    @include transition(transform);
+    
+    &:hover {
+        transform: scale($scale);
+    }
+}
+
+// === OVERLAYS ===
+@mixin overlay($color: $color-primary, $opacity: $opacity-overlay-medium) {
+    @include absolute-cover;
+    background: rgba($color, $opacity);
+}
+
+@mixin gradient-overlay($color1, $color2, $opacity1: 0.3, $opacity2: 0.5) {
+    @include absolute-cover;
+    background: linear-gradient(
+        to bottom,
+        rgba($color1, $opacity1),
+        rgba($color2, $opacity2)
+    );
+}
+
+// === ANIMACIONES ===
+@mixin fade-in($duration: $transition-normal) {
+    animation: fadeIn $duration $easing-default;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// === SCROLLBAR PERSONALIZADO ===
+@mixin custom-scrollbar(
+    $width: 12px,
+    $track-color: $color-bg-light,
+    $thumb-color: $color-secondary,
+    $thumb-hover-color: $color-accent
+) {
+    &::-webkit-scrollbar {
+        width: $width;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: $track-color;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: $thumb-color;
+        border-radius: map-get($border-radius, sm);
+        
+        &:hover {
+            background: $thumb-hover-color;
+        }
+    }
+}
+
+// === ACCESIBILIDAD ===
+@mixin visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+@mixin focus-outline {
+    outline: 3px solid $color-secondary;
+    outline-offset: 2px;
+}
+
+// === ASPECT RATIO ===
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+    
+    &::before {
+        content: '';
+        display: block;
+        padding-top: ($height / $width) * 100%;
+    }
+    
+    > * {
+        @include absolute-cover;
+    }
+}
+
+// === FONT SIZE RESPONSIVO ===
+@mixin fluid-font($min-size, $max-size, $min-width: 320px, $max-width: 1200px) {
+    font-size: calc(
+        #{$min-size} + 
+        (#{$max-size} - #{$min-size}) * 
+        (100vw - #{$min-width}) / 
+        (#{$max-width} - #{$min-width})
+    );
+    
+    @media (max-width: $min-width) {
+        font-size: $min-size;
+    }
+    
+    @media (min-width: $max-width) {
+        font-size: $max-size;
+    }
+}
