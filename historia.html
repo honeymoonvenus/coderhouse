@@ -3,34 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestra Historia - CAFÉ PARA EL ALMA</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Nuestra Historia - Café Para El Alma | Tradición Familiar desde 1995</title>
+    <meta name="description" content="Conoce la historia de Café Para El Alma, una tradición familiar que comenzó en 1995 en El Poblado, Medellín. Pasión por el café colombiano artesanal.">
+    <meta name="keywords" content="historia café para el alma, tradición familiar medellín, café artesanal 1995, milton gómez café">
+    <meta name="author" content="Café Para El Alma">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cafeparaelalma.com/historia.html">
+    <meta property="og:title" content="Nuestra Historia - Café Para El Alma">
+    <meta property="og:description" content="Una tradición familiar en el corazón de Medellín desde 1995">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://cafeparaelalma.com/historia.html">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <!-- Parallax Background -->
+    <div class="parallax-bg"></div>
+
+    <!-- Header -->
+    <header id="header">
         <div class="container">
             <div class="logo">CAFÉ PARA EL ALMA</div>
             <nav>
-                <a href="index.html">Inicio</a>
-                <a href="menu.html">Menú</a>
-                <a href="historia.html" class="active">Nuestra Historia</a>
-                <a href="ubicacion.html">Ubicación</a>
-                <a href="puntos-venta.html">Puntos de Venta</a>
+                <a href="index.html">
+                    <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                    </svg>
+                    Inicio
+                </a>
+                <a href="menu.html">
+                    <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 6v8h3v8h2V2c-2.76 0-5 2.24-5 4zm-5 3H9v11H7v-8c-2.21 0-4-1.79-4-4V5c0-1.1.9-2 2-2h6V1h2v2h2c1.1 0 2 .9 2 2v3c0 2.21-1.79 4-4 4z"/>
+                    </svg>
+                    Menú
+                </a>
+                <a href="historia.html" class="active">
+                    <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    Historia
+                </a>
+                <a href="ubicacion.html">
+                    <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    Ubicación
+                </a>
+                <a href="puntos-venta.html">
+                    <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 4H4v2h16V4zm1 10v-2l-1-5H4l-1 5v2h1v6h10v-6h4v6h2v-6h1zm-9 4H6v-4h6v4z"/>
+                    </svg>
+                    Puntos de Venta
+                </a>
             </nav>
         </div>
     </header>
 
     <main>
+        <!-- Page Header -->
         <section class="page-header">
             <div class="container">
-                <h1>Nuestra Historia</h1>
-                <p>Una tradición familiar en el corazón de Medellín</p>
+                <h1 data-aos="fade-up">Nuestra Historia</h1>
+                <p data-aos="fade-up" data-aos-delay="100">Una tradición familiar en el corazón de Medellín</p>
             </div>
         </section>
 
+        <!-- Story Content -->
         <section class="story-content">
             <div class="container">
-                <article class="story-section">
+                <article class="story-section" data-aos="fade-right">
                     <div class="story-text">
                         <h2>Los Inicios</h2>
                         <p>CAFÉ PARA EL ALMA nació en 1995 en el barrio El Poblado de Medellín, cuando Milton Gómez decidió abrir una pequeña cafetería con la visión de ofrecer el mejor café paisa a los habitantes de la ciudad. Con solo tres mesas y una máquina de espresso usada, comenzó esta aventura que se convertiría en tradición.</p>
@@ -38,7 +96,7 @@
                     <div class="story-image" role="img" aria-label="Icono representativo de una taza de café">☕</div>
                 </article>
 
-                <article class="story-section reverse">
+                <article class="story-section reverse" data-aos="fade-left">
                     <div class="story-image" role="img" aria-label="Icono representativo de cultivo de café orgánico">🌱</div>
                     <div class="story-text">
                         <h2>Crecimiento Orgánico</h2>
@@ -46,7 +104,7 @@
                     </div>
                 </article>
 
-                <article class="story-section">
+                <article class="story-section" data-aos="fade-right">
                     <div class="story-text">
                         <h2>Tradición Familiar</h2>
                         <p>Hoy, la segunda generación de la familia continúa el legado. Los hijos de Milton han incorporado nuevas técnicas y sabores, pero siempre manteniendo la esencia que nos caracteriza: pasión por el café, calidad suprema y el calor humano que nos identifica como paisas.</p>
@@ -54,22 +112,23 @@
                     <div class="story-image" role="img" aria-label="Icono representativo de familia unida">👨‍👩‍👧‍👦</div>
                 </article>
 
-                <section class="values">
+                <!-- Values Section -->
+                <section class="values" data-aos="fade-up">
                     <h2>Nuestros Valores</h2>
                     <div class="values-grid">
-                        <article class="value-item">
+                        <article class="value-item" data-aos="zoom-in" data-aos-delay="100">
                             <h3>🌱 Sostenibilidad</h3>
                             <p>Trabajamos directamente con productores locales, garantizando precios justos y prácticas sostenibles.</p>
                         </article>
-                        <article class="value-item">
+                        <article class="value-item" data-aos="zoom-in" data-aos-delay="200">
                             <h3>⚡ Calidad</h3>
                             <p>Cada taza es preparada con los más altos estándares de calidad y frescura.</p>
                         </article>
-                        <article class="value-item">
+                        <article class="value-item" data-aos="zoom-in" data-aos-delay="300">
                             <h3>❤️ Comunidad</h3>
                             <p>Somos parte activa de la comunidad paisa, apoyando el desarrollo local.</p>
                         </article>
-                        <article class="value-item">
+                        <article class="value-item" data-aos="zoom-in" data-aos-delay="400">
                             <h3>🎯 Innovación</h3>
                             <p>Combinamos tradición con innovación para crear experiencias únicas.</p>
                         </article>
@@ -79,6 +138,7 @@
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -93,6 +153,7 @@
                         <li><a href="menu.html">Menú</a></li>
                         <li><a href="historia.html">Historia</a></li>
                         <li><a href="ubicacion.html">Ubicación</a></li>
+                        <li><a href="puntos-venta.html">Puntos de Venta</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -103,5 +164,31 @@
             </div>
         </div>
     </footer>
+
+    <!-- AOS Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const header = document.getElementById('header');
+            
+            if (scrolled > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
